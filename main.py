@@ -25,7 +25,7 @@ st.title('World Air Quality and Water Pollution Visualization')
 
 # Sidebar for User Input
 st.sidebar.header('User Input')
-selected_chart = st.sidebar.selectbox('Select Chart Type', ['Line Chart', 'Bar Chart', 'Scatter Plot', 'Histogram', 'Map'])
+selected_chart = st.sidebar.selectbox('Select Chart Type', ['Line Chart', 'Bar Chart', 'Scatter Plot', 'Map'])
 
 # Main Content
 st.header('Randomly Generated Data:')
@@ -42,14 +42,10 @@ elif selected_chart == 'Bar Chart':
     fig = px.bar(water_pollution_data, x='Year', y='WaterPollutionIndex', color='Country', title='Water Pollution Over Time')
 elif selected_chart == 'Scatter Plot':
     fig = px.scatter(air_quality_data, x='AirQualityIndex', y='Year', color='Country', title='Scatter Plot of Air Quality')
-elif selected_chart == 'Histogram':
-    fig = px.histogram(air_quality_data, x='AirQualityIndex', nbins=30, title='Air Quality Histogram')
-    st.plotly_chart(fig)
-
-    fig = px.histogram(water_pollution_data, x='WaterPollutionIndex', nbins=30, title='Water Pollution Histogram')
-    st.plotly_chart(fig)
+    
 elif selected_chart == 'Map':
     fig = px.scatter_geo(air_quality_data, locations='Country', locationmode='country names', color='AirQualityIndex',
                          title='Air Quality Map', projection='natural earth')
     fig.update_geos(showcoastlines=True, coastlinecolor="Black", showland=True, landcolor="white")
-    st.plotly_chart(fig)
+
+st.plotly_chart(fig)
