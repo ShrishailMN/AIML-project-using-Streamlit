@@ -5,8 +5,8 @@ import plotly.express as px
 
 # Generate Random Data for Air Quality and Water Pollution
 np.random.seed(42)
-n_countries = 20
-countries = [f'Country {i}' for i in range(1, n_countries + 1)]
+countries = ['United States', 'India', 'China', 'Brazil', 'Germany', 'Russia', 'United Kingdom', 'France', 'Italy', 'Canada',
+             'Australia', 'Mexico', 'South Africa', 'Japan', 'South Korea', 'Indonesia', 'Turkey', 'Saudi Arabia', 'Argentina', 'Nigeria']
 
 air_quality_data = pd.DataFrame({
     'Country': np.random.choice(countries, size=100),
@@ -42,7 +42,6 @@ elif selected_chart == 'Bar Chart':
     fig = px.bar(water_pollution_data, x='Year', y='WaterPollutionIndex', color='Country', title='Water Pollution Over Time')
 elif selected_chart == 'Scatter Plot':
     fig = px.scatter(air_quality_data, x='AirQualityIndex', y='Year', color='Country', title='Scatter Plot of Air Quality')
-    
 elif selected_chart == 'Map':
     fig = px.scatter_geo(air_quality_data, locations='Country', locationmode='country names', color='AirQualityIndex',
                          title='Air Quality Map', projection='natural earth')
