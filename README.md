@@ -21,3 +21,6 @@ The dataset consists of 100 records with randomly generated water pollution data
 The WaterPollutionIndex values are synthetic and do not represent real-world water pollution measurements.
 Note:
 These datasets are entirely fictional and generated for the purpose of creating a sample Streamlit app for data visualization.
+
+
+Checkout the project: https://aiml-project-using-app-jth5zu2vf4qbsccsazmceb.streamlit.app/
